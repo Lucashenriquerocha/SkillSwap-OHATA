@@ -1,0 +1,8 @@
+/* Estilo para fazer as colunas ocuparem 100% da altura da página */
+html, body {
+    height: 100%;
+  }
+  
+  .row {
+    height: 100%;
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Skills</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-3 profile-section d-flex align-items-center flex-column">
+                <div class="profile text-center">
+                    <img src="david-photo.png" alt="Profile Picture" class="img-fluid rounded-circle">
+                    <h2>David</h2>
+                </div>
+            </div>
+            <div class="col-md-9 main-section d-flex flex-column justify-content-center align-items-center bg-white">
+                <div class="swap-section text-center mb-4 p-3 border">
+                    <h2>Swap</h2>
+                    <form class="form-inline justify-content-center" id="swapForm">
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="username" placeholder="Usuário" required>
+                        <button type="submit" class="btn btn-primary mb-2">Trocar</button>
+                    </form>
+                    <div id="error-message" class="text-danger mt-2" style="display: none;"></div>
+                </div>
+                <div class="skills-section text-center p-3 border">
+                    <h2>Skills</h2>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="skill m-2">
+                            <img src="phyton.png" alt="Python" class="img-fluid skill-icon" style="background-color: #4CA3AF;">
+                        </div>
+                        <div class="skill m-2">
+                            <img src="java.png" alt="Java" class="img-fluid skill-icon" style="background-color: #DF3232;">
+                        </div>
+                        <div class="skill m-2">
+                            <button class="btn btn-secondary skill-icon">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('swapForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.toLowerCase();
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === 'python' || username === 'java') {
+                window.location.href = 'perfil/perfil.html';
+            } else {
+                errorMessage.textContent = 'Não há um perfil correspondente.';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
